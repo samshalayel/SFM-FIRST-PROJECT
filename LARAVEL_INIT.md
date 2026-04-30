@@ -1,0 +1,1 @@
+# Laravel Project - SFM First Project\n\nLaravel project initialized.\n\nTo set up locally:\n```bash\ncomposer install\ncp .env.example .env\nphp artisan key:generate\n```
