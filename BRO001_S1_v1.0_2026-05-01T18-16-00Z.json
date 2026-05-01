@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "product_definition_v1",
+      "type": "input",
+      "data": {
+        "label": "Enhanced Vaccination Management Ecosystem",
+        "description": "Comprehensive digital solution integrating global best practices for vaccination programs.",
+        "points": [
+          "End-to-end vaccine supply chain and cold chain tracking",
+          "Universal child health profile with national ID integration",
+          "Automated scheduling, reminders, and adverse effect reporting",
+          "AI-driven demand forecasting and operational analytics"
+        ]
+      },
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "actor_admin_v1",
+      "data": {
+        "label": "Actor: Program Administrator",
+        "description": "Manages system configuration, policies, and high-level reporting.",
+        "points": [
+          "Oversee stock allocation",
+          "Analyze program performance",
+          "Manage system access"
+        ]
+      },
+      "position": { "x": 0, "y": 120 }
+    },
+    {
+      "id": "actor_healthworker_v1",
+      "data": {
+        "label": "Actor: Health Worker",
+        "description": "Front-line user involved in patient care and stock handling.",
+        "points": [
+          "Register patients",
+          "Administer vaccines",
+          "Log inventory usage"
+        ]
+      },
+      "position": { "x": 500, "y": 120 }
+    },
+    {
+      "id": "entity_inventory_v1",
+      "data": {
+        "label": "Entity: Smart Inventory",
+        "description": "Dynamic tracking of vaccine batches, expiry, and storage conditions.",
+        "points": [
+          "Live stock levels",
+          "Cold chain telemetry",
+          "Predictive replenishment"
+        ]
+      },
+      "position": { "x": 0, "y": 240 }
+    },
+    {
+      "id": "entity_patient_v1",
+      "data": {
+        "label": "Entity: Digital Health Subject",
+        "description": "Secure, portable record for individuals receiving vaccinations.",
+        "points": [
+          "Demographic data",
+          "Immunization history",
+          "AEFI logs"
+        ]
+      },
+      "position": { "x": 500, "y": 240 }
+    },
+    {
+      "id": "module_supplychain_v1",
+      "data": {
+        "label": "Module: Intelligent Supply Chain",
+        "description": "Optimizes logistics from manufacturer to administration point.",
+        "points": [
+          "GPS/Temp monitoring",
+          "Recall management",
+          "Usage optimization"
+        ]
+      },
+      "position": { "x": 0, "y": 360 }
+    },
+    {
+      "id": "module_engagement_v1",
+      "data": {
+        "label": "Module: Patient Engagement & Scheduling",
+        "description": "Facilitates communication and ensures schedule adherence.",
+        "points": [
+          "Automated reminders",
+          "Self-scheduling portal",
+          "Education delivery"
+        ]
+      },
+      "position": { "x": 500, "y": 360 }
+    },
+    {
+      "id": "boundary_analytics_v1",
+      "type": "output",
+      "data": {
+        "label": "Boundary: Public Health Intelligence",
+        "description": "Delivers actionable insights for policy and operational decisions.",
+        "points": [
+          "Coverage heatmaps",
+          "Outbreak predictive modeling",
+          "Resource allocation efficiency"
+        ]
+      },
+      "position": { "x": 250, "y": 480 }
+    }
+  ],
+  "edges": [
+    { "id": "e-scope-admin-v1", "source": "product_definition_v1", "target": "actor_admin_v1" },
+    { "id": "e-scope-hw-v1", "source": "product_definition_v1", "target": "actor_healthworker_v1" },
+    { "id": "e-admin-supply-v1", "source": "actor_admin_v1", "target": "module_supplychain_v1" },
+    { "id": "e-hw-engage-v1", "source": "actor_healthworker_v1", "target": "module_engagement_v1" },
+    { "id": "e-supply-inv-v1", "source": "module_supplychain_v1", "target": "entity_inventory_v1" },
+    { "id": "e-engage-pat-v1", "source": "module_engagement_v1", "target": "entity_patient_v1" },
+    { "id": "e-entities-analytics-v1", "source": "entity_inventory_v1", "target": "boundary_analytics_v1" }
+  ],
+  "evidence": {
+    "S0_FILE": "Global Vaccination Best Practices Integration",
+    "CONTEXT": "User request for an enhanced, comprehensive S1 Flow."
+  },
+  "exportedAt": "2026-05-01T18-16-00Z"
+}
