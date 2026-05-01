@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "product_definition_global",
+      "type": "input",
+      "data": {
+        "label": "Enhanced Global Vaccination System",
+        "description": "Digitizing vaccination with cold chain, EHR integration, and advanced analytics.",
+        "points": [
+          "Ensure vaccine potency via cold chain tracking",
+          "Seamless integration with national EHR",
+          "Predictive stock analytics"
+        ]
+      },
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "actor_admin_global",
+      "data": {
+        "label": "Actor: Health Center Admin",
+        "description": "Manages local operations and specialized data.",
+        "points": [
+          "Monitors cold chain alerts",
+          "Reviews EHR sync status",
+          "Acts on predictive reports"
+        ]
+      },
+      "position": { "x": 0, "y": 100 }
+    },
+    {
+      "id": "actor_system_global",
+      "data": {
+        "label": "Actor: Core Platform",
+        "description": "Background services logic.",
+        "points": [
+          "Syncs with external EHR",
+          "Processes sensor data",
+          "Generates analytics"
+        ]
+      },
+      "position": { "x": 500, "y": 100 }
+    },
+    {
+      "id": "entity_coldchain",
+      "data": {
+        "label": "Entity: Cold Chain Log",
+        "description": "Conceptual representation of temperature history.",
+        "points": [
+          "Batch ID",
+          "Temp readings",
+          "Location"
+        ]
+      },
+      "position": { "x": 0, "y": 200 }
+    },
+    {
+      "id": "entity_ehr_record",
+      "data": {
+        "label": "Entity: EHR External Record",
+        "description": "Conceptual data mapped from National EHR.",
+        "points": [
+          "Patient ID",
+          "External history",
+          "Sync timestamp"
+        ]
+      },
+      "position": { "x": 500, "y": 200 }
+    },
+    {
+      "id": "module_coldchain_mon",
+      "data": {
+        "label": "Module: Cold Chain Monitoring",
+        "description": "High-level module for IoT sensor integration.",
+        "points": [
+          "Sensor data intake",
+          "Alert management",
+          "History reporting"
+        ]
+      },
+      "position": { "x": 0, "y": 300 }
+    },
+    {
+      "id": "module_ehr_comm",
+      "data": {
+        "label": "Module: EHR Interoperability",
+        "description": "High-level module managing data exchange.",
+        "points": [
+          "API connector",
+          "Data mapping",
+          "Security protocols"
+        ]
+      },
+      "position": { "x": 500, "y": 300 }
+    },
+    {
+      "id": "boundary_global_reporting",
+      "type": "output",
+      "data": {
+        "label": "Output: Global Standard Efficiency",
+        "description": "Improved healthcare outcomes and safety.",
+        "points": [
+          "Guaranteed vaccine safety",
+          "Unified patient records",
+          "Data-driven decisions"
+        ]
+      },
+      "position": { "x": 250, "y": 400 }
+    }
+  ],
+  "edges": [
+    { "id": "e-scope-admin-g", "source": "product_definition_global", "target": "actor_admin_global" },
+    { "id": "e-scope-system-g", "source": "product_definition_global", "target": "actor_system_global" },
+    { "id": "e-admin-ccmon", "source": "actor_admin_global", "target": "module_coldchain_mon" },
+    { "id": "e-system-ehr-c", "source": "actor_system_global", "target": "module_ehr_comm" },
+    { "id": "e-ccmon-cclog", "source": "module_coldchain_mon", "target": "entity_coldchain" },
+    { "id": "e-ehr-c-ehr-r", "source": "module_ehr_comm", "target": "entity_ehr_record" },
+    { "id": "e-entities-out-g", "source": "entity_coldchain", "target": "boundary_global_reporting" }
+  ],
+  "evidence": {
+    "S0_FILE": "S0_DATA_Vaccination_Strategy.json",
+    "PD_FILE": "PD_DATA_Vaccination.json",
+    "USER_INSTRUCTION": "Update based on global vaccination systems (cold chain, EHR)"
+  },
+  "exportedAt": "2026-05-01T18-18-00Z"
+}
