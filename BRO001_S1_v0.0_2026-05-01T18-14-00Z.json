@@ -1,0 +1,124 @@
+{
+  "nodes": [
+    {
+      "id": "product_definition",
+      "type": "input",
+      "data": {
+        "label": "Product Scope: Vaccination Management",
+        "description": "Digitizing vaccination inventory and child registration for health centers.",
+        "points": [
+          "Track vaccine stock and expiry",
+          "Register children and manage records",
+          "Automate monthly consumption reports"
+        ]
+      },
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "actor_admin",
+      "data": {
+        "label": "Actor: Health Center Admin",
+        "description": "Primary user managing vaccination data and reports.",
+        "points": [
+          "Manage inventory",
+          "Generate reports",
+          "Supervise operations"
+        ]
+      },
+      "position": { "x": 0, "y": 100 }
+    },
+    {
+      "id": "actor_system",
+      "data": {
+        "label": "Actor: Vaccination System",
+        "description": "Automated processes within the application.",
+        "points": [
+          "Calculates needs",
+          "Monitors expiry",
+          "Validates schedule"
+        ]
+      },
+      "position": { "x": 500, "y": 100 }
+    },
+    {
+      "id": "entity_vaccine",
+      "data": {
+        "label": "Entity: Vaccine Stock",
+        "description": "Conceptual representation of vaccine inventory items.",
+        "points": [
+          "Vaccine type",
+          "Expiry date",
+          "Quantity"
+        ]
+      },
+      "position": { "x": 0, "y": 200 }
+    },
+    {
+      "id": "entity_child",
+      "data": {
+        "label": "Entity: Child Record",
+        "description": "Conceptual representation of registered children.",
+        "points": [
+          "Child details",
+          "Vaccination history",
+          "Scheduled dates"
+        ]
+      },
+      "position": { "x": 500, "y": 200 }
+    },
+    {
+      "id": "module_inventory",
+      "data": {
+        "label": "Module: Inventory Management",
+        "description": "High-level module for handling stock operations.",
+        "points": [
+          "Stock intake",
+          "Expiry tracking",
+          "Usage logging"
+        ]
+      },
+      "position": { "x": 0, "y": 300 }
+    },
+    {
+      "id": "module_registration",
+      "data": {
+        "label": "Module: Child Registration",
+        "description": "High-level module for managing child profiles.",
+        "points": [
+          "Profile entry",
+          "History updates",
+          "Scheduling"
+        ]
+      },
+      "position": { "x": 500, "y": 300 }
+    },
+    {
+      "id": "boundary_reporting",
+      "type": "output",
+      "data": {
+        "label": "Output: Operational Efficiency",
+        "description": "Final product output improving center operations.",
+        "points": [
+          "Accurate reports",
+          "Better scheduling",
+          "Reduced wastage"
+        ]
+      },
+      "position": { "x": 250, "y": 400 }
+    }
+  ],
+  "edges": [
+    { "id": "e-scope-admin", "source": "product_definition", "target": "actor_admin" },
+    { "id": "e-scope-system", "source": "product_definition", "target": "actor_system" },
+    { "id": "e-admin-inv", "source": "actor_admin", "target": "module_inventory" },
+    { "id": "e-system-reg", "source": "actor_system", "target": "module_registration" },
+    { "id": "e-inv-vaccine", "source": "module_inventory", "target": "entity_vaccine" },
+    { "id": "e-reg-child", "source": "module_registration", "target": "entity_child" },
+    { "id": "e-entities-out", "source": "entity_vaccine", "target": "boundary_reporting" }
+  ],
+  "evidence": {
+    "S0_FILE": "S0_DATA_Vaccination_Strategy.json",
+    "PD_FILE": "PD_DATA_Vaccination.json"
+  },
+  "exportedAt": "2026-05-01T18-14-00Z"
+}
