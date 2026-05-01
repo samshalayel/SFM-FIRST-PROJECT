@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "node-1",
+      "type": "input",
+      "data": { "label": "المشكلة: إدارة مخزون التطعيمات وتسجيل الأطفال" },
+      "position": { "x": 250, "y": 25 }
+    },
+    {
+      "id": "node-2",
+      "data": { "label": "الحل المقترح: نظام إلكتروني شامل" },
+      "position": { "x": 250, "y": 125 }
+    },
+    {
+      "id": "node-3",
+      "data": { "label": "البيانات (دليل): تواريخ منتهية، استهلاك يومي، جدول فلسطيني" },
+      "position": { "x": 100, "y": 225 }
+    },
+    {
+      "id": "node-4",
+      "data": { "label": "التوجه: أتمتة العمليات للموظفين في المركز الصحي" },
+      "position": { "x": 400, "y": 225 }
+    },
+    {
+      "id": "node-5",
+      "type": "output",
+      "data": { "label": "النتيجة: تقارير دقيقة، متابعة مخزون، كفاءة تشغيلية" },
+      "position": { "x": 250, "y": 325 }
+    }
+  ],
+  "edges": [
+    { "id": "edge-1", "source": "node-1", "target": "node-2" },
+    { "id": "edge-2", "source": "node-2", "target": "node-3" },
+    { "id": "edge-3", "source": "node-2", "target": "node-4" },
+    { "id": "edge-4", "source": "node-3", "target": "node-5" },
+    { "id": "edge-5", "source": "node-4", "target": "node-5" }
+  ]
+}
