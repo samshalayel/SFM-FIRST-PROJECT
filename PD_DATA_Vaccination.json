@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "id": "node-1",
+      "type": "input",
+      "data": { "label": "مشكلة إدارة التطعيمات" },
+      "position": { "x": 250, "y": 25 }
+    },
+    {
+      "id": "node-2",
+      "data": { "label": "تسجيل الأطفال والتطعيمات المستلمة" },
+      "position": { "x": 100, "y": 125 }
+    },
+    {
+      "id": "node-3",
+      "data": { "label": "حساب الاحتياجات الشهرية والاستهلاك" },
+      "position": { "x": 400, "y": 125 }
+    },
+    {
+      "id": "node-4",
+      "data": { "label": "نظام لإدارة المخزون (تواريخ الانتهاء)" },
+      "position": { "x": 100, "y": 225 }
+    },
+    {
+      "id": "node-5",
+      "data": { "label": "تطبيق جدول التطعيمات الفلسطيني" },
+      "position": { "x": 400, "y": 225 }
+    },
+    {
+      "id": "node-6",
+      "type": "output",
+      "data": { "label": "تحسين كفاءة المركز الصحي والموظفين" },
+      "position": { "x": 250, "y": 325 }
+    }
+  ],
+  "edges": [
+    { "id": "edge-1", "source": "node-1", "target": "node-2" },
+    { "id": "edge-2", "source": "node-1", "target": "node-3" },
+    { "id": "edge-3", "source": "node-2", "target": "node-4" },
+    { "id": "edge-4", "source": "node-3", "target": "node-5" },
+    { "id": "edge-5", "source": "node-4", "target": "node-6" },
+    { "id": "edge-6", "source": "node-5", "target": "node-6" }
+  ]
+}
