@@ -1,0 +1,1 @@
+{"nodes":[{"id":"node-1","type":"default","data":{"label":"الهدف: إدارة الوقت بفعالية"},"position":{"x":100,"y":100}},{"id":"node-2","type":"default","data":{"label":"الحل: تطبيق بسيط"},"position":{"x":300,"y":100}}],"edges":[{"id":"edge-1","source":"node-1","target":"node-2"}]}
