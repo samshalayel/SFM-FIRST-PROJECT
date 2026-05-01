@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "input",
+      "data": { "label": "الوضع الحالي: فوضى في بيانات المدرسة (إكسل)" },
+      "position": { "x": 250, "y": 25 }
+    },
+    { "id": "2", "data": { "label": "الرؤية: نظام مركزي منظم (Database)" }, "position": { "x": 250, "y": 125 } },
+    { "id": "3", "data": { "label": "النتيجة المتوقعة: إدارة فعالة للطلاب والرسوم والمدرسين" }, "position": { "x": 250, "y": 225 } },
+    { "id": "4", "data": { "label": "التوجه: بناء قاعدة بيانات موحدة بدلاً من ملفات الإكسل" }, "position": { "x": 250, "y": 325 } }
+  ],
+  "edges": [
+    { "id": "e1-2", "source": "1", "target": "2", "animated": true },
+    { "id": "e2-3", "source": "2", "target": "3", "animated": true },
+    { "id": "e3-4", "source": "3", "target": "4", "animated": true }
+  ]
+}
