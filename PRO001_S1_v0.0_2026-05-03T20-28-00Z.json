@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "input",
+      "data": { "label": "Product Definition", "description": "High-level vision and constraints for PRO001", "points": ["Define core purpose", "Identify target users"] },
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "2",
+      "data": { "label": "Primary Actor: Admin", "description": "Manages system settings and data", "points": ["Full access scope", "System configuration"] },
+      "position": { "x": 0, "y": 100 }
+    },
+    {
+      "id": "3",
+      "data": { "label": "Primary Actor: User", "description": "Main consumer of functionality", "points": ["Limited access scope", "Core feature interaction"] },
+      "position": { "x": 500, "y": 100 }
+    },
+    {
+      "id": "4",
+      "data": { "label": "Core Entity", "description": "Main conceptual data concept", "points": ["Holds critical info", "Unique identifier"] },
+      "position": { "x": 250, "y": 200 }
+    },
+    {
+      "id": "5",
+      "data": { "label": "Core Module", "description": "Key functional building block", "points": ["Houses business logic", "Exposes key services"] },
+      "position": { "x": 250, "y": 300 }
+    },
+    {
+      "id": "6",
+      "data": { "label": "User Interaction Boundary", "description": "Interface layer for User actor", "points": ["Captures user input", "Displays data state"] },
+      "position": { "x": 500, "y": 400 }
+    },
+    {
+      "id": "7",
+      "data": { "label": "Admin Interaction Boundary", "description": "Interface layer for Admin actor", "points": ["Administrative control panel", "System oversight views"] },
+      "position": { "x": 0, "y": 400 }
+    },
+    {
+      "id": "8",
+      "type": "output",
+      "data": { "label": "External Boundary", "description": "Integration points with external systems", "points": ["Data synchronization", "Third-party APIs"] },
+      "position": { "x": 250, "y": 500 }
+    }
+  ],
+  "edges": [
+    { "id": "e1-2", "source": "1", "target": "2" },
+    { "id": "e1-3", "source": "1", "target": "3" },
+    { "id": "e2-7", "source": "2", "target": "7" },
+    { "id": "e3-6", "source": "3", "target": "6" },
+    { "id": "e6-5", "source": "6", "target": "5" },
+    { "id": "e7-5", "source": "7", "target": "5" },
+    { "id": "e5-4", "source": "5", "target": "4" }
+  ],
+  "evidence": { "s0_file": "PRO001_S0_2026_05032018.json", "pd_file": "PRO001_PD_2026_05032018.json" },
+  "exportedAt": "2026-05-03T20-28-00Z"
+}
