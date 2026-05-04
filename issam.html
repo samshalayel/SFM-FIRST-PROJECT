@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Time in Gaza</title>
+</head>
+<body>
+<h1>Current Time in Gaza</h1>
+<p id="time"></p>
+<script>
+var options = {
+  timeZone: 'Asia/Gaza',
+  year: 'numeric', month: 'numeric', day: 'numeric',
+  hour: 'numeric', minute: 'numeric', second: 'numeric',
+};
+var formatter = new Intl.DateTimeFormat([], options);
+document.getElementById('time').innerHTML = formatter.format(new Date());
+</script>
+</body>
+</html>
